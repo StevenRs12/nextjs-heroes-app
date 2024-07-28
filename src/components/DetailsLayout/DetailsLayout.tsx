@@ -1,20 +1,13 @@
-"use client";
 import React from "react";
-import { useParams } from "next/navigation";
-import { useHeroDetails } from "@/hooks/useHeroDetails";
-import Loader from "../Loader/Loader";
 import BannerDetails from "../BannerDetails/BannerDetails";
 import ComicsSection from "../ComicsSection/ComicsSection";
+import { Hero, Comic } from "@/interfaces/interfaces";
+interface DetailsLayoutProps {
+  hero: Hero;
+  comics: Comic[];
+}
 
-const HeroDetailPage = () => {
-  const { id } = useParams();
-  const heroId = Array.isArray(id) ? id[0] : id;
-
-  const { hero, comics, loading, error } = useHeroDetails(heroId);
-
-  if (loading) return <Loader />;
-  if (error) return <p>Error {error} </p>;
-
+const DetailsLayout: React.FC<DetailsLayoutProps> = ({ hero, comics }) => {
   return (
     <>
       <BannerDetails hero={hero} />
@@ -23,4 +16,4 @@ const HeroDetailPage = () => {
   );
 };
 
-export default HeroDetailPage;
+export default DetailsLayout;

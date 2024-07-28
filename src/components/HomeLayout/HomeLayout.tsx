@@ -1,29 +1,32 @@
 "use client";
-import React from "react";
-import { useState } from "react";
-import { useCharacters } from "@/hooks/useCharacters";
-import { useFavorites } from "@/hooks/useFavorites";
+import React, { useState } from "react";
+import { Character, HomeLayoutProps } from "@/interfaces/interfaces";
 import Filter from "@/components/Filter/Filter";
 import CardCharacter from "@/components/CardCharacter/CardCharacter";
 import styles from "./HomeLayout.module.scss";
-import { Character } from "@/interfaces/interfaces";
 import Loader from "../Loader/Loader";
+import { useFavorites } from "@/hooks/useFavorites";
 
-const HomeLayout = () => {
-  const { characters, loading, error } = useCharacters();
-  const { favorites, showFavorites } = useFavorites();
-
+const HomeLayout: React.FC<HomeLayoutProps> = ({
+  characters,
+  error,
+  loading,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
+
+  const { favorites, showFavorites } = useFavorites();
 
   const handleFilterInputChange = (wordFilter: string) => {
     setSearchTerm(wordFilter);
 
-    const charactersToDisplay = showFavorites
-      ? characters.filter((character) => favorites.includes(character.id))
+    const charactersToFilter = showFavorites
+      ? characters.filter((character: Character) =>
+          favorites.includes(character.id)
+        )
       : characters;
 
-    const filteredData = charactersToDisplay.filter((val) =>
+    const filteredData = charactersToFilter.filter((val) =>
       val.name.toLowerCase().includes(wordFilter.toLowerCase())
     );
 

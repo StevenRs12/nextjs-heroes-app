@@ -1,5 +1,23 @@
 @import "../../config/variables.scss";
 
-.comicName{
-    padding: 8px 0;;
+.comicYear {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
 }
+
+.comicImage {
+  margin-bottom: 10px;
+}
+
+.comicName {
+  font-weight: 500; 
+}
+
+.comicCard {
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    width: 180px;
+  }
+  

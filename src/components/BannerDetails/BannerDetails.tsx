@@ -1,3 +1,4 @@
+"use client";
 import { useFavorites } from "@/hooks/useFavorites";
 import styles from "./BannerDetails.module.scss";
 import Image from "next/image";

@@ -27,6 +27,7 @@ export interface Comic {
   id: number;
   title: string;
   description: string;
+  dates: any[];
   thumbnail: {
     path: string;
     extension: string;
@@ -47,4 +48,9 @@ export interface CardCharacterProps {
   id: number;
   name: string;
   thumbnail: Thumbnail;
+}
+export interface HomeLayoutProps {
+  characters: Character[];
+  error: string | null;
+  loading: boolean;
 }
