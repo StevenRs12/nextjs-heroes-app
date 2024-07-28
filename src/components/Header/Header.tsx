@@ -27,6 +27,7 @@ const Header: React.FC = () => {
           width={130}
           height={52}
           onClick={handleHeroesClick}
+          data-testid="header-logo"
         />
       </div>
       <div className={styles.favorites} onClick={handleFavoritesClick}>
@@ -35,6 +36,7 @@ const Header: React.FC = () => {
           alt="Favorites"
           width={24}
           height={24}
+          data-testid="heart-icon"
         />
         {favorites.length > 0 && (
           <span className={styles.favoritesCount}>{favorites.length}</span>
