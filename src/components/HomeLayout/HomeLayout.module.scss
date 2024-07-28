@@ -1,0 +1,40 @@
+@import "../../config/variables.scss";
+
+.homeContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid $gray;
+  padding: 10px 10px 10px 40px;
+  font-size: 16px;
+}
+
+.resultsText {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.characterList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(177px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

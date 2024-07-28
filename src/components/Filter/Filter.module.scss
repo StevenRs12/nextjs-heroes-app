@@ -1,0 +1,31 @@
+@import "../../config/variables.scss";
+
+.container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid $gray;
+  padding: 10px 10px 10px 40px;
+  font-size: 16px;
+}
+
+.resultsText {
+  margin-top: 10px;
+  font-size: 14px;
+}

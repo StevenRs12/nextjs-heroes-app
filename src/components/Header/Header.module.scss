@@ -1,0 +1,35 @@
+@import "../../config/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $black;
+  border-bottom: 1px solid $gray-dark;
+}
+
+.logo {
+  display: flex;
+  padding: 8px 16px;
+}
+
+.favorites {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.favorites a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.favoritesCount {
+  color: $white;
+  font-size: 16px;
+  margin-left: 4px;
+  align-self: center;
+}

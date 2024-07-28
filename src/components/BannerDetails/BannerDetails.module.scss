@@ -1,0 +1,103 @@
+@import "../../config/variables.scss";
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 320px;
+  background-color: $black;
+  color: $white;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 24px),
+    calc(100% - 24px) 100%,
+    0 100%
+  );
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imageContainer {
+  flex: 0 0 auto;
+  height: 100%;
+  padding: 0 48px;
+}
+
+.characterImage {
+  height: auto;
+  width: 320px;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 390px;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 48px;
+  text-align: center;
+  height: 100%;
+}
+
+.nameContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.characterName {
+  color: $white;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46px;
+  margin-right: auto;
+}
+
+.characterDescription {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  margin: 16px 0;
+  width: 544px;
+}
+
+@media (max-width: 920px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 390px;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+
+  .characterImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .infoContainer {
+    align-items: flex-start;
+    padding: 8px 16px 48px;
+    text-align: left;
+  }
+
+  .nameContainer {
+    justify-content: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .characterDescription {
+    width: auto;
+  }
+}
