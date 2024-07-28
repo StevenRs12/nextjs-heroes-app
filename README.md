@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Architecture
 
-## Getting Started
+- **Favorites Context**: A context (`FavoritesContext`) is used to manage the global state of favorite characters. This allows any component in the application to easily access and modify the favorites information.
 
-First, run the development server:
+- **Custom Hook**: A custom hook `useFavorites` is implemented to interact with the favorites context, providing functions to add, remove, and show favorites.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Server-Side Rendering (SSR)**: Both views utilize Server-Side Rendering to load dynamic data from the Marvel API before the page is rendered on the client. This improves user experience by providing immediately visible content and optimizes SEO.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- On the main page, you can search for heroes using the filter input.
+- Click on a hero to see more details, including their comics.
+- You can add heroes to your favorites, and the filtered list will show only the favorites when activated.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Testing
 
-## Learn More
+The project includes both unit tests and E2E tests to verify its functionality:
 
-To learn more about Next.js, take a look at the following resources:
+- **Unit Tests**: Unit tests are used to verify the logic of individual components and ensure that expected behavior is maintained.
+- **E2E Tests**: End-to-end tests are performed using Cypress to verify the overall application flow and functionality from the end-user perspective.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the unit tests:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+npm run test
 
-## Deploy on Vercel
+To run the E2E tests:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+npx cypress open
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributions
+
+If you would like to contribute, please open a Pull Request or create an Issue in the repository.
