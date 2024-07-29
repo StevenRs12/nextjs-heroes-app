@@ -12,6 +12,38 @@
 - Click on a hero to see more details, including their comics.
 - You can add heroes to your favorites, and the filtered list will show only the favorites when activated.
 
+## Development Setup
+
+To start the development server, run:
+
+npm install
+
+This will start your Next.js application in development mode. Open your browser and navigate to `http://localhost:3000` to view the app.
+
+## Production Setup
+
+To build and start the application for production, follow these steps:
+
+1. Build your application:
+
+npm run build
+
+2. Start the production server:
+
+npm start
+
+Your application should now be running in production mode at `http://localhost:3000`.
+
+## Scripts
+
+Here are some useful scripts you can run:
+
+- `dev` - Starts the development server.
+- `build` - Builds the application for production.
+- `start` - Starts the production server.
+- `lint` - Runs the linter to check the code for potential errors.
+- `test` - Runs the test suite.
+
 ## Testing
 
 The project includes both unit tests and E2E tests to verify its functionality:
